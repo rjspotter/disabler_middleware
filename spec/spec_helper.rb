@@ -1,6 +1,9 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'stringio'
 require 'rspec'
+require 'rspec/autorun'
+require 'rack/test'
 require 'disabler_middleware'
 
 # Requires supporting files with custom matchers and macros, etc,
