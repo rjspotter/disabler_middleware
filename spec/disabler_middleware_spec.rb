@@ -21,7 +21,7 @@ describe "DisablerMiddleware" do
   context "base setup" do
     
     before do
-      @disabler = Rack::Disabler.new(app,store,{})
+      @disabler = Rack::Disabler.new(app,{:store => store, :responses => {}})
     end
     
     it "should take an app and store it for later" do
@@ -51,11 +51,12 @@ describe "DisablerMiddleware" do
     context "disabled developer" do
 
       before do
-        @disabled = Rack::Disabler.new(app,store,
-                                       {
+        @disabled = Rack::Disabler.new(app,{
+                                         :store => store, 
+                                         :responses => {
                                          'freeloader' =>  [402, {}, ['Payment Required']]
-                                       }
-                                       ) {|env| "disableddeveloperkey"}
+                                         }
+                                       }) {|env| "disableddeveloperkey"}
       end
 
       it "should call store with disableddeveloperkey" do
@@ -72,7 +73,7 @@ describe "DisablerMiddleware" do
 
     context "allowed developer" do
       before do
-        @allowed = Rack::Disabler.new(app,store,{}) {|env| "alloweddeveloperkey"}
+        @allowed = Rack::Disabler.new(app,{:store => store}) {|env| "alloweddeveloperkey"}
       end
 
       it "should lookup developer" do

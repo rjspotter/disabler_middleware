@@ -3,8 +3,8 @@ module Rack
 
   class Disabler
     
-    def initialize(app, store, responses, &block)
-      @app, @store, @responses = app, store, responses
+    def initialize(app, options = {}, &block)
+      @app, @store, @responses = app, options[:store], (options[:responses] || {})
       @extractor = block || lambda {|env| }
     end
 
