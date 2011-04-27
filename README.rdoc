@@ -1,6 +1,16 @@
 = disabler_middleware
 
-Description goes here.
+== Usage
+
+Rack::Disabler.new(app) do |disabler|
+  disabler.store = Redis.new
+  disabler.extractor = {|env| Rack::Request.new(env).path}
+  disabler.responses =  {'freeloader' =>  [402, {}, ["Payment Required"]],'douchebag'  =>  [403, {}, ["Forbidden"]]} 
+end
+
+this is an example (these are the defaults) but it should give you some idea of how it works.  
+
+Put simply; each request runs the extractor the resulting value is looked up in the data store (Redis or anything else that responds to #get(key)) if theres a return string it finds the matching response in the responses store and returns that otherwise it calls the app.
 
 == Contributing to disabler_middleware
  
