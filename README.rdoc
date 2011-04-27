@@ -2,11 +2,11 @@
 
 == Usage
 
-Rack::Disabler.new(app) do |disabler|
-  disabler.store = Redis.new
-  disabler.extractor = {|env| Rack::Request.new(env).path}
-  disabler.responses =  {'freeloader' =>  [402, {}, ["Payment Required"]],'douchebag'  =>  [403, {}, ["Forbidden"]]} 
-end
+  Rack::Disabler.new(app) do |disabler|
+    disabler.store = Redis.new
+    disabler.extractor = {|env| Rack::Request.new(env).path}
+    disabler.responses =  {'freeloader' =>  [402, {}, ["Payment Required"]],'douchebag'  =>  [403, {}, ["Forbidden"]]} 
+  end
 
 this is an example (these are the defaults) but it should give you some idea of how it works.  
 
