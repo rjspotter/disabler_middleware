@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Randall Potter"]
-  s.date = %q{2011-04-13}
-  s.description = %q{TODO: longer description of your gem}
+  s.date = %q{2011-04-14}
+  s.description = %q{disable developers and apis with a key/val lookup}
   s.email = %q{rjspotter@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -20,10 +20,12 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "disabler_middleware.gemspec",
     "lib/disabler_middleware.rb",
     "spec/disabler_middleware_spec.rb",
     "spec/spec_helper.rb"
@@ -32,7 +34,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.7.2}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{disable developers and apis}
   s.test_files = [
     "spec/disabler_middleware_spec.rb",
     "spec/spec_helper.rb"

@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "disabler_middleware"
   gem.homepage = "http://github.com/rjspotter/disabler_middleware"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{disable developers and apis}
+  gem.description = %Q{disable developers and apis with a key/val lookup}
   gem.email = "rjspotter@gmail.com"
   gem.authors = ["Randall Potter"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
